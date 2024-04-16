@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid text-light pt-sm-5 p-lg-5 h-25">
+<div class="container-fluid text-light p-lg-5">
     <h4>Streaming</h4>
     <hr>
     <div class="container-fluid">
@@ -63,7 +63,7 @@
                 for (var portal in json) {
                     for (const stream of json[portal]) {
                         var portal = stream["portal name"]
-                        var mac = stream["mac"]
+                        var mac = stream["mac"].toUpperCase()
                         var client = stream["client"]
                         var channel = stream["channel name"]
                         var start = stream["start time"] * 1000

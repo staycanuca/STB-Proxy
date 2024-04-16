@@ -1,20 +1,17 @@
 FROM alpine:latest
 
 ENV HOST=localhost
-
 ENV CONFIG=/config/config.json
 
-ENV CACHE=/cache/
-
 RUN apk add \
-	py3-pip \
 	ffmpeg \
+	py3-pip \
 	tzdata
 
 RUN pip3 install \
 	flask \
-	requests\
-	retrying
+	requests \
+	waitress
 
 # Copy files
 COPY /app.py /app/app.py
